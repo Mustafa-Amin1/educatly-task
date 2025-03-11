@@ -1,0 +1,120 @@
+@import "../../../shared/variables/index";
+@import "../../../shared/functions/index";
+@import "../../../shared/mixins/index";
+
+.blog-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  padding: toRem(24);
+  display: flex;
+  flex-direction: column;
+  row-gap: toRem(32);
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .blog-image {
+    width: 100%;
+    height: toRem(200);
+    object-fit: cover;
+  }
+
+  .blog-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: toRem(12);
+
+    .category {
+      font-weight: 600;
+      font-size: toRem(14);
+      line-height: 20px;
+      letter-spacing: 0%;
+      color: $font-primary;
+    }
+
+    .blog-title {
+      font-weight: 600;
+      font-size: toRem(20);
+      line-height: 30px;
+      letter-spacing: 0%;
+      color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .external-link {
+        color: $black;
+        text-decoration: none;
+        font-size: toRem(18);
+        align-self: flex-start;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .blog-description {
+      font-weight: 400;
+      font-size: toRem(16);
+      line-height: 24px;
+      letter-spacing: 0%;
+      color: #667085;
+    }
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    column-gap: toRem(12);
+
+    .author-avatar {
+      width: toRem(40);
+      height: toRem(40);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .author-details {
+      display: flex;
+      flex-direction: column;
+
+      .author-name {
+        font-weight: 500;
+        font-size: toRem(14);
+        line-height: 20px;
+        letter-spacing: 0%;
+        color: $black;
+      }
+
+      .publish-date {
+        font-weight: 500;
+        font-size: toRem(14);
+        line-height: 20px;
+        letter-spacing: 0%;
+        color: #667085;
+      }
+    }
+  }
+
+
+  // Tablet (≥ 768px)
+  @include bp-min-width($bp-bootstrap-md) {
+    .blog-image {
+      height: toRem(240);
+    }
+
+    .author-info {
+      margin-top: auto;
+    }
+  }
+
+  // Desktop (≥ 1200px)
+  @include bp-min-width($bp-bootstrap-xl) {}
+}

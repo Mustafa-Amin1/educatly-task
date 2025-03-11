@@ -1,0 +1,80 @@
+@import '../../../shared/variables/index';
+@import '../../../shared/functions/index';
+@import '../../../shared/mixins/index';
+
+#hero_section {
+    background-color: $bg-secondary;
+    //mobile
+    .content {
+        display: flex;
+        flex-direction: column;
+        row-gap: toRem(16);
+        align-items: center;
+        height: toRem(408);
+        justify-content: center;
+
+        .tag {
+            padding-top: toRem(2);
+            padding-right: toRem(10);
+            padding-bottom: toRem(2);
+            padding-left: toRem(10);
+            border-radius: toRem(16);
+            background-color: $bg-tag;
+            font-weight: 500;
+            font-size: toRem(14);
+            text-align: center;
+            color: $font-primary;
+            width: fit-content;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: toRem(36);
+            line-height: toRem(44);
+            letter-spacing: -2%;
+            text-align: center;
+            color: $font-primary;
+        }
+
+        .subtitle {
+            font-weight: 400;
+            font-size: toRem(18);
+            line-height: toRem(28);
+            letter-spacing: 0%;
+            text-align: center;
+            color: $font-primary;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #d3d3d3;
+            background-color: #fff;
+          
+            input {
+              border: none;
+              outline: none;
+              width: 100%;
+              font-size: 1rem;
+              color: #666;
+            }
+          
+            .search-icon {
+              font-size: 1.2rem;
+              color: #888;
+            }
+          }
+          
+    }
+
+
+    //tablet
+    @include bp-min-width($bp-bootstrap-md) {}
+
+    //desktop
+    @include bp-min-width($bp-bootstrap-xl) {}
+}

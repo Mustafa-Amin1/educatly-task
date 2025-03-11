@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+// shared styles
+@import '../src/app/shared/variables/index';
+@import '../src/app/shared/mixins/index';
+@import '../src/app/shared/functions/index';
+@import '../src/app/shared/styles/index';
+
+*{
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  body {
+    font-family: $font-inter;
+    background-color: $bg-app;
+    height: 100dvh; /* Ensures the body takes the full viewport height */
+    margin: 0; /* Remove default margin */
+  }
+  
+  h1, h2, h3 {
+    font-family: $font-inter;
+    font-weight: 700;
+  }
+  
+  p {
+    font-family: $font-inter;
+    font-weight: 400; 
+  }
+  
+  ul, p, h1, h2, h3, h4, h5 {
+    margin-bottom: 0px;
+  }
+

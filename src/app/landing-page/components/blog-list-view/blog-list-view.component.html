@@ -1,0 +1,16 @@
+<section id="blog_list_view"  *ngIf="articles$ | async as articles">
+  <div class="container">
+      <ng-container *ngIf="articles.length > 0; else noPosts">
+        <div class="blog-container">
+          <app-blog-card *ngFor="let article of articles; trackBy: trackById" [article]="article" class=""></app-blog-card>
+        </div>
+        <button class="btn  mt-3 load-btn" (click)="loadMoreArticles()"><span class="fa-solid fa-arrow-down-long"></span> Load More</button>
+      </ng-container>
+      <ng-template #noPosts>
+        <p>No blog posts available.</p>
+      </ng-template>
+  </div>
+</section>
+
+
+
